@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "feT+UOCJc7QHr7KgmcPQ1E4VQrYOFKZaz5CPQmTrqqR5UrBje6Lgsk9Y2d77q9FYN1JtYqXQti0uxsqVhY2rAQ==",
+  "dgSpecHash": "PypfIY+Ub3MDRwoWlTGoyfh6dm0XQTggZ2ERuFJbCy+RQ4VVQX/sVGco+7xUKK7FfmPErgYJzlALQ9nJF6GDuA==",
   "success": true,
-  "projectFilePath": "C:\\dev\\journal\\journal.csproj",
+  "projectFilePath": "C:\\dev\\Journal\\journal.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

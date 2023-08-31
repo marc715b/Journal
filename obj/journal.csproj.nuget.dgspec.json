@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\journal\\journal.csproj": {}
+    "C:\\dev\\Journal\\journal.csproj": {}
   },
   "projects": {
-    "C:\\dev\\journal\\journal.csproj": {
+    "C:\\dev\\Journal\\journal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\journal\\journal.csproj",
+        "projectUniqueName": "C:\\dev\\Journal\\journal.csproj",
         "projectName": "journal",
-        "projectPath": "C:\\dev\\journal\\journal.csproj",
+        "projectPath": "C:\\dev\\Journal\\journal.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\journal\\obj\\",
+        "outputPath": "C:\\dev\\Journal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"

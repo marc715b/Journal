@@ -20,11 +20,11 @@ public class Chapter {
     public void Print() {
         Console.Clear();
 
-        Console.WriteLine("Læser nu: " + _title + ".\n");
+        Console.WriteLine("Læser nu: " + _title + ".");
 
         Write(_content);
 
-        Console.WriteLine("\n\nTryk ENTER for at vende tilbage.");
+        Console.WriteLine("\nTryk ENTER for at vende tilbage.");
 
         // Vent med at fortsætte.
         Console.ReadKey();

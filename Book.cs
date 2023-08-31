@@ -10,8 +10,8 @@ public class Book {
 
     private void PrintHeader() {
         Console.WriteLine(
-            "Velkommen til " + _title + "!\n" +
-            "Naviger kapitlerne vha. piletasterne, og tryk ENTER ved det kapitel du vil læse.\n"
+            "Velkommen til " + _title + "!Naviger kapitlerne vha. piletasterne.\n" +
+            "Tryk ENTER ved det kapitel du vil læse. Tryk Q for at bryde ud af programmet.\n"
         );
     }
 
@@ -36,6 +36,11 @@ public class Book {
             ConsoleKeyInfo key = Console.ReadKey();
 
             switch (key.Key) {
+                // Bryd helt ud af programmet.
+                case ConsoleKey.Q:
+                    Environment.Exit(0); // dirty; who cares?
+                    break;
+
                 // Bryd ud af loopet og returner det valgte kapitel.
                 case ConsoleKey.Enter:
                     return _chapters[ChapterIdx - 1];
