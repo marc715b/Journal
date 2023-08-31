@@ -1,21 +1,10 @@
 ﻿Book MyBook = new Book("Programmerings noter");
 
 // Tilføj kapitler.
-MyBook.AddChapter("Variabler", @"
-  de seje
-");
-
-MyBook.AddChapter("Funktioner", @"
-  de også seje
-");
-
-MyBook.AddChapter("Loops", @"
-  de sejere
-");
-
-MyBook.AddChapter("Classes", @"
-  de de sejeste
-");
+MyBook.AddChapter("Variabler", Chapters.Variabler);
+MyBook.AddChapter("Loops", Chapters.Loops);
+MyBook.AddChapter("Funktioner", Chapters.Funktioner);
+MyBook.AddChapter("Classes", Chapters.Classes);
 
 while (true) {
     Console.Clear();
