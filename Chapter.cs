@@ -8,14 +8,6 @@ public class Chapter {
         _title = Path.GetFileNameWithoutExtension(_path);
     }
 
-    // Langomst skriv teksten ud.
-    private void Write(string text) {
-        foreach (char c in text) {
-            Thread.Sleep(50);
-            Console.Write(c);
-        }
-    }
-
     // Læs filen fra disken.
     private string Read() 
         => File.ReadAllText(_path);
@@ -23,13 +15,13 @@ public class Chapter {
     // Skriv titlen af kapitlet og derefter kapitlets indhold.
     public void Print() {
         Console.Clear();
-        Console.WriteLine("Læser nu: " + _title + ".");
+        Utils.WriteColor("Læser nu: " + _title + ".", ConsoleColor.Green);
 
         string content = Read();
-        Write(content);
+        Utils.Write(content);
 
         // Vent med at fortsætte.
-        Console.WriteLine("\nTryk ENTER for at vende tilbage.");
+        Utils.WriteColor("\nTryk ENTER for at vende tilbage.", ConsoleColor.Green);
         Console.ReadKey();
     }
 }

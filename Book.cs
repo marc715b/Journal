@@ -11,9 +11,10 @@ public class Book {
     }
 
     private void PrintHeader() {
-        Console.WriteLine(
-            "Velkommen til " + _title + "! Naviger kapitlerne vha. piletasterne.\n" +
-            "Tryk ENTER ved det kapitel du vil læse. Tryk Q for at bryde ud af programmet.\n"
+        Utils.WriteColor(
+            $"Velkommen til {_title}! Naviger kapitlerne vha. piletasterne.\n" +
+            "Tryk ENTER ved det kapitel som du vil læse. Tryk Q for at bryde ud af programmet.\n",
+            ConsoleColor.Green
         );
     }
 
