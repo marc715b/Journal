@@ -1,11 +1,11 @@
 public class Chapter {
     public string _title;
-    private string _content;
+    private string _path;
 
     // Kapitlets constructor.
-    public Chapter(string title, string content) {
-        _title = title;
-        _content = content;
+    public Chapter(string path) {
+        _path = path;
+        _title = Path.GetFileNameWithoutExtension(_path);
     }
 
     // Langomst skriv teksten ud.
@@ -16,17 +16,20 @@ public class Chapter {
         }
     }
 
+    // Læs filen fra disken.
+    private string Read() 
+        => File.ReadAllText(_path);
+
     // Skriv titlen af kapitlet og derefter kapitlets indhold.
     public void Print() {
         Console.Clear();
-
         Console.WriteLine("Læser nu: " + _title + ".");
 
-        Write(_content);
-
-        Console.WriteLine("\nTryk ENTER for at vende tilbage.");
+        string content = Read();
+        Write(content);
 
         // Vent med at fortsætte.
+        Console.WriteLine("\nTryk ENTER for at vende tilbage.");
         Console.ReadKey();
     }
 }

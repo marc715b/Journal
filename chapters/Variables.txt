@@ -1,6 +1,4 @@
-public static class Chapters {
-    public static string Variabler = 
-@"Variabler er en måde for programmeringssprog at give brugeren
+Variabler er en måde for programmeringssprog at give brugeren
 adgang til computerens hukommelse. I de fleste sprog, følger de
 det samme syntax:
 
@@ -22,15 +20,4 @@ den plads hvor du vil bruge den, f.eks:
     Console.WriteLine(navn);
     
 Siden <navn> har en værdi på 123, kommer konsolen til
-at skrive 123.";
-
-    public static string Loops = 
-@"Loops, eller løkker, er en måde at få computeren til at køre
-det samme kode flere gange.";
-
-    public static string Funktioner = 
-@"";
-
-    public static string Classes =
-@"";
-}
+at skrive 123.

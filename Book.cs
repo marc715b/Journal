@@ -5,17 +5,24 @@ public class Book {
     // Bogens constructor.
     public Book(string title) {
         _title = title;
+
         _chapters = new List<Chapter>();
+        AddChapters();
     }
 
     private void PrintHeader() {
         Console.WriteLine(
-            "Velkommen til " + _title + "!Naviger kapitlerne vha. piletasterne.\n" +
+            "Velkommen til " + _title + "! Naviger kapitlerne vha. piletasterne.\n" +
             "Tryk ENTER ved det kapitel du vil læse. Tryk Q for at bryde ud af programmet.\n"
         );
     }
 
-    public void AddChapter(string title, string content) => _chapters.Add(new Chapter(title, content));
+    private void AddChapters() {
+        // hardcoded lol
+        foreach (string file in Directory.GetFiles(@"C:\dev\Journal\chapters")) {
+            _chapters.Add(new Chapter(file));
+        }
+    }
 
     public Chapter PickChapter() {
         int ChapterIdx = 1;
