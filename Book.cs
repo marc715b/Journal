@@ -20,7 +20,7 @@ public class Book {
 
     private void AddChapters() {
         // hardcoded lol
-        foreach (string file in Directory.GetFiles(@"C:\dev\Journal\chapters")) {
+        foreach (string file in Directory.GetFiles(@"C:\dev\Journal\chapters", "*.txt")) {
             _chapters.Add(new Chapter(file));
         }
     }
@@ -52,6 +52,9 @@ public class Book {
                 // Bryd ud af loopet og returner det valgte kapitel.
                 case ConsoleKey.Enter:
                     return _chapters[ChapterIdx - 1];
+
+                case ConsoleKey.N:
+                    break;
 
                 // Hvis vi kommer under 1, spring op igen til den øverste.
                 case ConsoleKey.UpArrow:
