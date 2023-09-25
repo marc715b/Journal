@@ -13,4 +13,10 @@ public static class Utils {
         Console.WriteLine(text);
         Console.ResetColor();
     }
+
+    // Lav en "prompt" før vi spørger om brugerens input.
+    public static string Prompt(string text, ConsoleColor color = ConsoleColor.White) {
+        Utils.WriteColor(text, color);
+        return Console.ReadLine();
+    }
 }

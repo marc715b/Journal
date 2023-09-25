@@ -1,3 +1,5 @@
+using System.Text;
+
 public class Book {
     private string _title;
     private List<Chapter> _chapters;
@@ -13,16 +15,45 @@ public class Book {
     private void PrintHeader() {
         Utils.WriteColor(
             $"Velkommen til {_title}! Naviger kapitlerne vha. piletasterne.\n" +
-            "Tryk ENTER ved det kapitel som du vil læse. Tryk Q for at bryde ud af programmet.\n",
+            "Tryk ENTER ved det kapitel som du vil læse.\n" +
+            "Tryk N for at tilføje et nyt kapitel.\n" +
+            "Tryk Q for at bryde ud af programmet.",
             ConsoleColor.Green
         );
     }
 
+    private void AddChapter(Chapter chapter) 
+        => _chapters.Add(chapter);
+
     private void AddChapters() {
         // hardcoded lol
         foreach (string file in Directory.GetFiles(@"C:\dev\Journal\chapters", "*.txt")) {
-            _chapters.Add(new Chapter(file));
+           AddChapter(new Chapter(file));
         }
+    }
+
+    public Chapter CreateChapter() {
+        Utils.WriteColor(
+            "Du tilføjer nu et nyt kapitel. Skriv først navnet af kapitlet,\n" +
+            "og derefter indholdet af kapitlet. Skriv :q når du er færdig.\n" +
+            "Dette er ikke et tekstredigeringsprogram. Hvis du laver fejl, øv bøv.",
+            ConsoleColor.Green
+        );
+
+        string title = Utils.Prompt("Title: ");
+
+        // det her er det klammeste jeg nogensinde har skrevet
+        StringBuilder content = new StringBuilder();
+        
+        string line;
+        while ((line = Console.ReadLine()) != ":q")
+            content.Append(line);
+
+        // hardcoded igen
+        Chapter newChapter = new Chapter(@"C:\dev\Journal\chapters\" + title + ".txt");
+        newChapter.Write(content.ToString());
+
+        return newChapter;
     }
 
     public Chapter PickChapter() {
@@ -54,6 +85,7 @@ public class Book {
                     return _chapters[ChapterIdx - 1];
 
                 case ConsoleKey.N:
+                    AddChapter(CreateChapter());
                     break;
 
                 // Hvis vi kommer under 1, spring op igen til den øverste.

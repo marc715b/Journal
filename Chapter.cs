@@ -12,6 +12,10 @@ public class Chapter {
     private string Read() 
         => File.ReadAllText(_path);
 
+    // Skriv til filen på disken.
+    public void Write(string text)
+        => File.WriteAllText(_path, text);
+
     // Skriv titlen af kapitlet og derefter kapitlets indhold.
     public void Print() {
         Console.Clear();
