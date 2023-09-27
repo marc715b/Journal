@@ -3,10 +3,13 @@ using System.Text;
 public class Book {
     private string _title;
     private List<Chapter> _chapters;
+    private Encryption _encryption;
 
     // Bogens constructor.
     public Book(string title) {
         _title = title;
+
+        _encryption = new Encryption();
 
         _chapters = new List<Chapter>();
         AddChapters();
@@ -33,6 +36,7 @@ public class Book {
     }
 
     public Chapter CreateChapter() {
+        Console.Clear();
         Utils.WriteColor(
             "Du tilføjer nu et nyt kapitel. Skriv først navnet af kapitlet,\n" +
             "og derefter indholdet af kapitlet. Skriv :q når du er færdig.\n" +
@@ -51,9 +55,14 @@ public class Book {
 
         // hardcoded igen
         Chapter newChapter = new Chapter(@"C:\dev\Journal\chapters\" + title + ".txt");
-        newChapter.Write(content.ToString());
+        newChapter.Write(ref _encryption, content.ToString());
 
         return newChapter;
+    }
+
+    public void Run() {
+        Chapter chapter = PickChapter();
+        chapter.Print(ref _encryption);
     }
 
     public Chapter PickChapter() {

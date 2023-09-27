@@ -9,19 +9,19 @@ public class Chapter {
     }
 
     // Læs filen fra disken.
-    private string Read() 
-        => File.ReadAllText(_path);
+    private string Read(ref Encryption encryption) 
+        => encryption.Decrypt(File.ReadAllText(_path));
 
     // Skriv til filen på disken.
-    public void Write(string text)
-        => File.WriteAllText(_path, text);
+    public void Write(ref Encryption encryption, string text)
+        => File.WriteAllText(_path, encryption.Encrypt(text));
 
     // Skriv titlen af kapitlet og derefter kapitlets indhold.
-    public void Print() {
+    public void Print(ref Encryption encryption) {
         Console.Clear();
         Utils.WriteColor("Læser nu: " + _title + ".", ConsoleColor.Green);
 
-        string content = Read();
+        string content = Read(ref encryption);
         Utils.Write(content);
 
         // Vent med at fortsætte.

@@ -15,8 +15,8 @@ public static class Utils {
     }
 
     // Lav en "prompt" før vi spørger om brugerens input.
-    public static string Prompt(string text, ConsoleColor color = ConsoleColor.White) {
-        Utils.WriteColor(text, color);
+    public static string Prompt(string text) {
+        Console.Write(text);
         return Console.ReadLine();
     }
 }
