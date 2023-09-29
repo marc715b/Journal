@@ -51,7 +51,7 @@ public class Book {
         
         string line;
         while ((line = Console.ReadLine()) != ":q")
-            content.Append(line);
+            content.Append(line + "\n");
 
         // hardcoded igen
         Chapter newChapter = new Chapter(@"C:\dev\Journal\chapters\" + title + ".txt");
