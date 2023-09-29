@@ -1,3 +1,7 @@
 # build artifacts
 bin/ 
 obj/
+
+# stupid shit
+.vs/
+.vscode/
