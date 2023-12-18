@@ -19,7 +19,7 @@ public class Chapter {
     // Skriv titlen af kapitlet og derefter kapitlets indhold.
     public void Print(ref Encryption encryption) {
         Console.Clear();
-        Utils.WriteColor("Læser nu: " + _title + ".", ConsoleColor.Green);
+        Utils.WriteColor($"Læser nu: {_title}.", ConsoleColor.Green);
 
         string content = Read(ref encryption);
         Utils.Write(content);

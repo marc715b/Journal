@@ -54,7 +54,7 @@ public class Book {
             content.Append(line + "\n");
 
         // hardcoded igen
-        Chapter newChapter = new Chapter(@"C:\dev\Journal\chapters\" + title + ".txt");
+        Chapter newChapter = new Chapter($"C:\\dev\\Journal\\chapters\\{title}.txt");
         newChapter.Write(ref _encryption, content.ToString());
 
         return newChapter;
@@ -77,7 +77,7 @@ public class Book {
 
                 Chapter chapter = _chapters[i - 1];
 
-                Console.WriteLine("{0}[{1}] {2}" , prefix, i, chapter._title);
+                Console.WriteLine($"{prefix}[{i}] {chapter._title}");
             }
 
             // Håndter tasterne.
